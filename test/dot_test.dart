@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:shapes_widget/shapes_widget.dart';
+import 'package:shaped_widget_package/shaped_widgets/shaped_widgets.dart';
 
 void main() {
   testWidgets('Dot widget has correct size and color',
