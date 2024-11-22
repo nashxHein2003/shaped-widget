@@ -1,6 +1,6 @@
-name: shaped_widget_package
+name: shaped_widget
 description: A collection of customizable Flutter widgets for drawing shapes such as dots, triangle and star.
-version: 1.1.0
+version: 1.2.1
 homepage: https://github.com/nashxHein2003/shaped-widget
 license: MIT
 

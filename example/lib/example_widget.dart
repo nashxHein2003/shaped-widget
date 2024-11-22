@@ -1,5 +1,6 @@
+import 'package:example/common/constants/strings.dart';
 import 'package:flutter/material.dart';
-import 'package:shaped_widget_package/shaped_widgets/shaped_widgets.dart';
+import 'package:shaped_widget/shaped_widget.dart';
 
 class ExampleWidget extends StatelessWidget {
   const ExampleWidget({super.key});
@@ -11,7 +12,7 @@ class ExampleWidget extends StatelessWidget {
         leading: const Padding(
           padding: EdgeInsets.symmetric(horizontal: 12),
           child: Text(
-            'Shaped Widget Example Usage',
+            shapeWidgetExampleUsage,
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.w700,
@@ -20,56 +21,97 @@ class ExampleWidget extends StatelessWidget {
         ),
         leadingWidth: MediaQuery.sizeOf(context).width,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            const Row(
-              children: [
-                Text('Star Widget'),
-                Spacer(),
-                Star(
-                  color: Colors.red,
-                  numPoints: 5,
-                  size: 30,
-                ),
-              ],
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          const ExampleWidgetListTile(
+            title: starWidget,
+            child: Star(
+              color: Colors.grey,
+              numPoints: 5,
+              size: 30,
             ),
-            const Row(
-              children: [
-                Text('DashLine Widget'),
-                Spacer(),
-                DashLine(
-                  color: Colors.red,
-                  dashGap: 2,
-                  dashLength: 2,
-                  thickness: 1,
-                ),
-              ],
+          ),
+          const ExampleWidgetListTile(
+            title: dashLineWidget,
+            child: DashLine(
+              color: Colors.grey,
+              dashGap: 2,
+              dashLength: 5,
+              thickness: 2,
+              length: 100,
             ),
-            const Row(
-              children: [
-                Text('Single Dot Widget'),
-                Spacer(),
-                SingleDot(
-                  color: Colors.red,
-                  size: 30,
-                )
-              ],
+          ),
+          const ExampleWidgetListTile(
+            title: singleDotWidget,
+            child: SingleDot(
+              color: Colors.grey,
+              size: 30,
             ),
-            Row(
-              children: [
-                const Text('Triangle Widget'),
-                const Spacer(),
-                Triangle(
-                  color: Colors.red,
-                  size: 30,
-                )
-              ],
+          ),
+          ExampleWidgetListTile(
+            title: triangleWidget,
+            child: Triangle(
+              color: Colors.grey,
+              size: 30,
             ),
-          ],
+          ),
+          const ExampleWidgetListTile(
+            title: arrowShapeWidget,
+            child: ArrowShapeWidget(
+              color: Colors.grey,
+              height: 30,
+              width: 30,
+              padding: EdgeInsets.all(10),
+              alignment: Alignment.center,
+            ),
+          ),
+          const ExampleWidgetListTile(
+              title: heartShapeWidget,
+              child: HeartShapeWidget(
+                color: Colors.grey,
+                size: 30,
+              ))
+        ],
+      ),
+    );
+  }
+}
+
+class ExampleWidgetListTile extends StatelessWidget {
+  final String title;
+  final Widget child;
+  const ExampleWidgetListTile({
+    super.key,
+    required this.title,
+    required this.child,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 80,
+      padding: const EdgeInsets.symmetric(
+        horizontal: 12,
+      ),
+      decoration: const BoxDecoration(
+        border: Border(
+          bottom: BorderSide(
+            color: Colors.grey,
+            width: 1,
+            style: BorderStyle.solid,
+          ),
         ),
+      ),
+      child: Row(
+        children: [
+          Text(
+            title,
+            style: Theme.of(context).textTheme.bodyMedium,
+          ),
+          const Spacer(),
+          child,
+        ],
       ),
     );
   }

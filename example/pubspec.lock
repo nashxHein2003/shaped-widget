@@ -186,13 +186,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.0.2"
-  shaped_widget_package:
+  shaped_widget:
     dependency: "direct main"
     description:
       path: ".."
       relative: true
     source: path
-    version: "1.1.0"
+    version: "1.2.0"
   sky_engine:
     dependency: transitive
     description: flutter

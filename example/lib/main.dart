@@ -1,3 +1,4 @@
+import 'package:example/common/presentation/app_theme.dart';
 import 'package:example/example_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -10,8 +11,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: ExampleWidget(),
+    return MaterialApp(
+      home: const ExampleWidget(),
+      theme: appTheme,
       debugShowCheckedModeBanner: false,
     );
   }
