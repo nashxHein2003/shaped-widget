@@ -1,12 +1,10 @@
-## [1.1.0] - 2024-06-19
+## [1.2.0] - 2024-11-22
 
 ### Added
 
-- New widget: `Star` for creating a star shape.
+- New widget: `Heart Shape Widget` for creating a heart shape text widget.
+- New widget: `Arrow Shape Widget` for creating a arrow shape text widget.
 
 ### Changed
 
-- Improved rendering performance for `SingleDot` widget.
-- Added Gap around `SingleDot`.
-
-- Updated dependencies to address security vulnerabilities.
+- Modified: package name `shapes_widget` to `shaped_widget`.

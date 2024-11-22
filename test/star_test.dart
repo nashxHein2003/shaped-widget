@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:shapes_widget/shapes_widget.dart';
+import 'package:shaped_widget/shaped_widget.dart';
 
 void main() {
   testWidgets('Star widget renders correctly', (WidgetTester tester) async {
